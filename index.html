@@ -225,12 +225,20 @@
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Main Results</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <img id="model" width="80%" src="images/results.jpg">
+        <h3 class="subtitle has-text-centered">
+          <p style="font-family:Times New Roman"><b>We evaluate operators using training loss and Lambada, ARC-c, ARC-e, Logiqa, PIQA, Sciq, Winogrande and Wikitext PPL totaling eight standard NLP benchmarks. After $8 \times 10^{20}$ FLOPs of training, $G_{\text{direct}}^\uparrow$ demonstrates a significant speedup.</b></p>
+        </h3>
+      </div>
+    </div>
     <div class="columns is-centered">
 
       <!-- 3B. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">3B</h2>
+          <h2 class="title is-4">3B</h2>
           <p>
             Training 3B LLMs with 300B tokens. $G_\text{stack}$ significantly outperforms scratch in loss.
           </p>
@@ -243,7 +251,7 @@
 
       <!-- 7B. -->
       <div class="column">
-        <h2 class="title is-3">7B</h2>
+        <h2 class="title is-4">7B</h2>
         <div class="columns is-centered">
           <div class="column content">
             <p>
