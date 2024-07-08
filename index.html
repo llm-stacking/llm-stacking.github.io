@@ -40,6 +40,63 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- Add jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Add Slick Carousel -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <!-- 修改后的初始化代码 -->
+
+  <style>
+    .slider {
+      width: 1400px; /* 设置轮播图容器的宽度 */
+      height: 600px; /* 设置轮播图容器的高度 */
+      margin: 0 auto; /* 居中显示 */
+      overflow: hidden; /* 隐藏超出容器的内容 */
+      position: relative; /* 相对定位，为了容器内的绝对定位元素而设置 */
+    }
+    
+    .slider img {
+      width: auto; /* 自动适应宽度 */
+      height: 450px; /* 高度自适应容器 */
+      display: block; /* 块级元素显示 */
+      margin: 0 auto; /* 图片水平居中 */
+    }
+    
+    /* 增大前后箭头按钮并居中 */
+    .slick-prev,
+    .slick-next {
+      display: block; /* 强制显示箭头 */
+      background-color: #ccc; /* 按钮背景色 */
+      color: #494242; /* 按钮文字颜色 */
+      border-radius: 50%; /* 圆形按钮 */
+      position: absolute; /* 绝对定位 */
+      top: 50%; /* 垂直居中 */
+      transform: translateY(-50%); /* 垂直居中 */
+      cursor: pointer; /* 鼠标指针样式 */
+      z-index: 1000; /* 确保在顶部 */
+      font-size: 20px; /* 按钮文字大小 */
+      line-height: 1; /* 确保文字垂直居中 */
+    }
+    
+    /* 调整左箭头位置 */
+    .slick-prev {
+      left: 50px; /* 左侧位置 */
+    }
+    
+    /* 调整右箭头位置 */
+    .slick-next {
+      right: 50px; /* 右侧位置 */
+    }
+    
+    .caption {
+      text-align: center; /* 居中显示 */
+      margin-top: 10px; /* 上边距 */
+    }
+  </style>
+  
+
   <script>
     MathJax = {
       tex: {
@@ -212,9 +269,76 @@
       </div>
     </div>
     <!--/ Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h3 class="title is-3">Illustrations</h3>
+        <div class="slider">
+          <div>
+            <img src="images/gif/g_stack.gif" alt="Stack GIF">
+            <p class="caption">Illustration of the $G_{\text{stack}}$ operator</p>
+          </div>
+          <div>
+            <img src="images/gif/g_split.gif" alt="Split GIF">
+            <p class="caption">Illustration of the $G_{\text{split}}$ operator</p>
+          </div>
+          <div>
+            <img src="images/gif/g_learn.gif" alt="Learn GIF">
+            <p class="caption">Illustration of the $G_{\text{learn}}$ operator</p>
+          </div>
+          <div>
+            <img src="images/gif/g_zero.gif" alt="Zero GIF">
+            <p class="caption">Illustration of the $G_{\text{zero}}$ operator</p>
+          </div>
+          <div>
+            <img src="images/gif/g_mask.gif" alt="Mask GIF">
+            <p class="caption">Illustration of the $G_{\text{random}}$ operator</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item g_stack">
+            <img id="g_stack" width="20%" src="images/gif/g_stack.gif">
+          </div>
+          <div class="item g_split">
+            <img id="g_split" width="20%" src="images/gif/g_split.gif">
+          </div>
+          <div class="item g_learn">
+            <img id="g_learn" width="20%" src="images/gif/g_learn.gif">
+          </div>
+          
+        </div>
+      </div>
+    </div> -->
   </div>
 </section>
 
+<script>
+  $(document).ready(function(){
+    $('.slider').slick({
+      dots: true, // 显示导航点
+      infinite: true, // 无限循环
+      speed: 500, // 切换速度
+      slidesToShow: 2, // 每次显示的幻灯片数量
+      slidesToScroll: 1, // 每次滚动的幻灯片数量
+      prevArrow: '<button type="button" class="slick-prev">Previous</button>', // 上一个箭头
+      nextArrow: '<button type="button" class="slick-next">Next</button>', // 下一个箭头
+      adaptiveHeight: true, // 自适应高度
+      responsive: [
+        {
+          breakpoint: 768, // 断点宽度
+          settings: {
+            slidesToShow: 1, // 在断点下显示的幻灯片数量
+            slidesToScroll: 1 // 在断点下滚动的幻灯片数量
+          }
+        }
+      ]
+    });
+  });
+</script>
 
 <section class="section">
   <div class="container is-max-desktop">
